@@ -54,6 +54,9 @@ private String title[]={"菜谱","美食圈","null","消息","我"};//后面要�
                     case R.id.main_tab_addExam5:
                         tabHost.setCurrentTabByTag("我");
                         break;
+                    default:
+                        tabHost.setCurrentTabByTag("菜谱");
+                        break;
 
                 }
             }
@@ -80,12 +83,14 @@ public void initTabView()
            //设置跳转activity
 
         //载入view对象并设置跳转的activity
-    intent=new Intent().setClass(this, MainActivity.class);
-    spec=tabHost.newTabSpec("菜谱").setIndicator("菜谱").setContent(intent);
-    tabHost.addTab(spec);
+
     intent=new Intent().setClass(this, MainActivity2.class);
     spec=tabHost.newTabSpec("美食圈").setIndicator("美食圈").setContent(intent);
     tabHost.addTab(spec);
+    intent=new Intent().setClass(this, MainActivity.class);
+    spec=tabHost.newTabSpec("菜谱").setIndicator("菜谱").setContent(intent);
+    tabHost.addTab(spec);
+
 
 
     intent=new Intent().setClass(this, MainActivity3.class);

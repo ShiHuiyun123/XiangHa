@@ -68,7 +68,7 @@
               android:id="@+id/main_tab_addExam3"
                 style="@style/MMTabButton"
                 android:drawableTop="@drawable/z_home_menu_ico_find"
-                android:text="美食圈"
+
                 android:background="@drawable/tab_selector"
 
 
