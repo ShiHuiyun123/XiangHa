@@ -92,7 +92,7 @@ public void initTabView()
     spec=tabHost.newTabSpec("消息").setIndicator("消息").setContent(intent);
     tabHost.addTab(spec);
 
-    intent=new Intent().setClass(this, MainActivity4.class);
+    intent=new Intent().setClass(this, MyMainActivity.class);
     spec=tabHost.newTabSpec("我").setIndicator("我").setContent(intent);
     tabHost.addTab(spec);
 
