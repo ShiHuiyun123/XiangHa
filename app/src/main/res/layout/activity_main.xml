@@ -1,0 +1,332 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+    <cn.qust.utils.StickyLayout
+        android:id="@+id/sticky_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/sticky_header"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/z_home_topbar_bg_name" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/sticky_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <cn.qust.utils.PinnedHeaderExpandableListView
+                        android:id="@+id/expandablelist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:cacheColorHint="@null"
+                        android:childDivider="@drawable/child"
+                        android:childIndicatorLeft="0dp"
+                        android:divider="@color/Grey"
+                        android:dividerHeight="1dp"
+                        android:groupIndicator="@null"
+                        android:scrollbarAlwaysDrawHorizontalTrack="false" >
+
+
+                    </cn.qust.utils.PinnedHeaderExpandableListView>
+                    <RelativeLayout
+                        android:id="@+id/lin"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="vertical"
+
+                        >
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/zhu_viewpager1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            />
+                        <RadioGroup
+                            android:id="@+id/zhu_rg"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_horizontal"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true" />
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </RadioGroup>
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        >
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/z_homepage_wushiyangsheng"
+                            />
+                        <TextView
+                            android:id="@+id/zhu_textview1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="aaaaaaaaaaaaaaa"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        >
+                        <Button
+                            android:id="@+id/zhu_caipu"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:onClick="btnonClick"
+                            android:drawableLeft="@drawable/z_home_menu_ico_index_active"
+                            android:text="菜谱分类"
+                            android:background="@null"
+                            android:textColor="#ff0000"
+                            android:layout_weight="1"/>
+                        <Button
+                            android:id="@+id/zhu_yangsheng"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:onClick="btnonClick"
+                            android:drawableLeft="@drawable/z_homepage_zhishiyangsheng"
+                            android:text="健康养生"
+                            android:background="@null"
+                            android:textColor="#ff0000"
+
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+                    <GridView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:columnWidth="10dp"
+                        android:numColumns="4"
+                        android:id="@+id/zhu_gridview"
+                        >
+
+                    </GridView>
+
+                    <RelativeLayout
+                        android:id="@+id/re"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:orientation="vertical"
+
+                        >
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/zhu_viewpager1_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            />
+                    </RelativeLayout>
+                        <RadioGroup
+                            android:id="@+id/zhu_rg_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_horizontal"
+                            android:padding="15dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true" />
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg2_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <RadioButton
+                                android:id="@+id/zhu_rbg3_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </RadioGroup>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1000dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="4"
+                            android:orientation="vertical"
+                            android:padding="10dp"
+                            >
+                            <ImageView
+                                android:id="@+id/no_imageview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                />
+                             <TextView
+                                 android:id="@+id/no_textview"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="40dp"
+                                 android:background="#0f0f00"
+                                 android:text="aaaaaaaaa"
+                                 android:textSize="17sp"
+                                 android:textStyle="bold"
+                                 android:textColor="#fff"
+                                 />
+
+
+                            </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            >
+                            <TextView
+                                android:id="@+id/no_textview1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                />
+                            <ImageView
+                                android:id="@+id/no_imageview1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:scaleType="fitXY"
+                                />
+
+                            </LinearLayout>
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            >
+                            <TextView
+                                android:id="@+id/no_textview2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                />
+                            <ImageView
+                                android:id="@+id/no_imageview2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:scaleType="fitXY"
+                                />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="20dp"
+    android:text="-----------活跃美食家------------"
+    />
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/zhu_viewpager1_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        />
+<Button
+    android:id="@+id/di_button"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:gravity="center|center_horizontal"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:text="意见反馈"
+    android:background="@null"
+
+    />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </cn.qust.utils.StickyLayout>
+
+
+
+</RelativeLayout>

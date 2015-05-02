@@ -1,0 +1,103 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@android:id/tabhost"
+    >
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/rr">
+
+    <!--用于显示内容-->
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        >
+    </FrameLayout>
+
+
+
+    <!-- TabWidget必须标签，用来存放tab标签，且id必须为tabs -->
+    <TabWidget
+        android:id="@android:id/tabs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_weight="0"
+        >
+        </TabWidget>
+
+
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       android:background="@drawable/umeng_socialize_nav_bar_bg"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RadioGroup
+            android:id="@+id/main_tab_group"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:background="#0f0f0f00"
+             android:gravity="bottom"
+            android:orientation="horizontal"
+
+            >
+            <RadioButton
+                android:id="@+id/main_tab_addExam1"
+                style="@style/MMTabButton"
+                android:drawableTop="@drawable/z_home_menu_ico_index"
+                android:text="菜谱"
+                android:background="@drawable/tab_selector"
+
+                />
+            <RadioButton
+                android:id="@+id/main_tab_addExam2"
+                style="@style/MMTabButton"
+                android:drawableTop="@drawable/z_home_menu_ico_find"
+                android:text="美食圈"
+                android:background="@drawable/tab_selector"
+                />
+            <RadioButton
+              android:id="@+id/main_tab_addExam3"
+                style="@style/MMTabButton"
+                android:drawableTop="@drawable/z_home_menu_ico_find"
+                android:text="美食圈"
+                android:background="@drawable/tab_selector"
+
+
+            />
+            <RadioButton
+                android:id="@+id/main_tab_addExam4"
+                style="@style/MMTabButton"
+                android:background="@drawable/tab_selector"
+                android:drawableTop="@drawable/z_home_menu_ico_message"
+                android:text="消息"
+                android:button="@null"
+                />
+            <RadioButton
+                android:id="@+id/main_tab_addExam5"
+                style="@style/MMTabButton"
+                android:background="@drawable/tab_selector"
+                android:drawableTop="@drawable/z_home_menu_ico_me"
+                android:text="我"
+
+                />
+
+            </RadioGroup>
+
+        </FrameLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</TabHost>
