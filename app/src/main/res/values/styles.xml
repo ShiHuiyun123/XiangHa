@@ -17,5 +17,22 @@
 
 
     </style>
+    <style name="TabTxtv" >
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+    <style name="tabView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">3px</item>
+        <item name="android:background">#00ff00</item>
+        <item name="android:layout_weight">1</item>
+    </style>
 
 </resources>

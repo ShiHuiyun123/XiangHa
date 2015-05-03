@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/caipuListView_ImageVeiw"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/z_z_topbar_ico_back"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="返回"
+            android:textColor="#ff00"
+            android:textSize="27sp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="美食知识"
+            android:textSize="25sp" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/z_z_topbar_ico_so"/>
+        </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/rg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                    <RadioButton
+                        android:id="@+id/jingxuan"
+                        style="@style/TabTxtv"
+                        android:text="精选" />
+
+                    <RadioButton
+                        android:id="@+id/jkys"
+                        style="@style/TabTxtv"
+                        android:text="健康养生" />
+                    <RadioButton
+                        android:id="@+id/prjq"
+                        style="@style/TabTxtv"
+                        android:layout_gravity="center_vertical"
+                        android:text="烹饪技巧" />
+
+                    <RadioButton
+                        android:id="@+id/msjx"
+                        style="@style/TabTxtv"
+                        android:text="美食精选" />
+
+                    <RadioButton
+                        android:id="@+id/mszt"
+                        style="@style/TabTxtv"
+                        android:text="美食杂谈" />
+                </RadioGroup>
+            <!-- 小绿条 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+                <View
+                    android:id="@+id/view1"
+                    style="@style/tabView"
+                    android:visibility="visible" />
+                <View
+                    android:id="@+id/view2"
+                    style="@style/tabView"
+                    android:visibility="invisible" />
+                <View
+                    android:id="@+id/view3"
+                    style="@style/tabView"
+                    android:visibility="invisible" />
+                <View
+                    android:id="@+id/view4"
+                    style="@style/tabView"
+                    android:visibility="invisible" />
+                <View
+                    android:id="@+id/view5"
+                    style="@style/tabView"
+                    android:visibility="invisible" />
+                <View
+                    style="@style/tabView"
+                    android:visibility="invisible" />
+            </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <ListView
+                android:id="@+id/caipuListView_listView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="11">
+              </ListView>
+
+
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="美食圈"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:src="@drawable/z_z_topbar_ico_so"
+        />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+            <RadioButton
+                android:id="@+id/zuixin"
+                style="@style/TabTxtv"
+                android:text="最新" />
+
+            <RadioButton
+                android:id="@+id/zuire"
+                style="@style/TabTxtv"
+                android:text="最热" />
+            <RadioButton
+                android:id="@+id/guanzhu"
+                style="@style/TabTxtv"
+                android:layout_gravity="center_vertical"
+                android:text="关注" />
+
+            <RadioButton
+                android:id="@+id/shafa"
+                style="@style/TabTxtv"
+                android:text="沙发" />
+
+            <RadioButton
+                android:id="@+id/huoyuebang"
+                style="@style/TabTxtv"
+                android:text="活跃榜" />
+        </RadioGroup>
+        <!-- 小绿条 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+            <View
+                android:id="@+id/view1"
+                style="@style/tabView"
+                android:visibility="visible" />
+            <View
+                android:id="@+id/view2"
+                style="@style/tabView"
+                android:visibility="invisible" />
+            <View
+                android:id="@+id/view3"
+                style="@style/tabView"
+                android:visibility="invisible" />
+            <View
+                android:id="@+id/view4"
+                style="@style/tabView"
+                android:visibility="invisible" />
+            <View
+                android:id="@+id/view5"
+                style="@style/tabView"
+                android:visibility="invisible" />
+            <View
+                style="@style/tabView"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:background="@drawable/i_nopic">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+            <ListView
+                android:id="@+id/msq_zx_listview1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                >
+            </ListView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                >
+
+
+                </LinearLayout>
+            <ListView
+                android:id="@+id/msq_zx_listview2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                >
+
+            </ListView>
+            </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>

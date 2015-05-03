@@ -19,7 +19,6 @@
         <activity
             android:name=".ContentActivity"
             android:label="@string/title_activity_content" >
-
         </activity>
         <activity
             android:name=".MainActivity2"
@@ -33,17 +32,12 @@
             android:name=".MainActivity4"
             android:label="@string/title_activity_main_activity4" >
         </activity>
-
-        <activity
-            android:name=".MyMainActivity">
+        <activity android:name=".MyMainActivity" >
         </activity>
-        <activity
-            android:name=".LoginActivity" >
+        <activity android:name=".LoginActivity" >
         </activity>
-        <activity
-            android:name=".NotifySetActivity" >
+        <activity android:name=".NotifySetActivity" >
         </activity>
-
         <activity
             android:name=".WelcomActivity"
             android:label="@string/title_activity_welcom" >
@@ -52,6 +46,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChangeActivity"
+            android:label="@string/title_activity_change" >
+        </activity>
+        <activity
+            android:name=".CookListview_Activity"
+            android:label="@string/title_activity_cook_listview_" >
         </activity>
     </application>
 

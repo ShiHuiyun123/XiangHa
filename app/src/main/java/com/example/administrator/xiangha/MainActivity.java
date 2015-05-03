@@ -1,10 +1,12 @@
 package com.example.administrator.xiangha;
 //菜谱页面
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.widget.AbsListView.LayoutParams;
 import android.support.v7.app.ActionBarActivity;
@@ -147,15 +149,20 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
 
       // 给viewpage3设置数据
 
-      viewpage3.setAdapter(new AddpageAdapter3(getSupportFragmentManager()) );
+         viewpage3.setAdapter(new AddpageAdapter3(getSupportFragmentManager()) );
+
+        //给noiv添加监听事件
+        noiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,CookListview_Activity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
     }
-
-
-
-
 
     @Override
     public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
