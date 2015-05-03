@@ -6,7 +6,7 @@
     android:id="@+id/view03_imageview"
     android:layout_width="50dp"
     android:layout_height="50dp"
-    android:scaleType="fitXY"
+     android:scaleType="fitXY"
     android:background="@drawable/ic_launcher"
     />
     <TextView

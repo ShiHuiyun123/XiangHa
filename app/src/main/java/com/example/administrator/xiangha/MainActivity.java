@@ -16,7 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseExpandableListAdapter;
+
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.GridView;
@@ -40,19 +40,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import cn.qust.utils.PinnedHeaderExpandableListView;
-import cn.qust.utils.StickyLayout;
+
 
 import fra.ss.cns.AddPageFragment2;
 import fra.ss.cns.AddPageFragment3;
 import ss.simple.zi.AddPageAdapter;
-import ss.simple.zi.Group;
 
 
 
-public class MainActivity extends ActionBarActivity implements PinnedHeaderExpandableListView.OnHeaderUpdateListener, ExpandableListView.OnChildClickListener, ExpandableListView.OnGroupClickListener, StickyLayout.OnGiveUpTouchEventListener {
-    private PinnedHeaderExpandableListView expandableListView;
-    private StickyLayout stickyLayout;
+
+public class MainActivity extends ActionBarActivity  {
+
     private ViewPager viewpage1,viewpage2,viewpage3;
     private RadioGroup radiopage1,radiopage2;
     private TextView tv1,notv,notv1,notv2;
@@ -74,7 +72,7 @@ public class MainActivity extends ActionBarActivity implements PinnedHeaderExpan
 private final static int ids[]={R.id.zhu_rbg1,R.id.zhu_rbg2,R.id.zhu_rbg3};
 private final static int ids2[]={R.id.zhu_rbg1_1,R.id.zhu_rbg2_2,R.id.zhu_rbg3_3};
 private GridView gridview;
-    private MyexpandableListAdapter adapter;
+
     private RequestQueue requestQueue;
 
     @Override
@@ -97,15 +95,11 @@ private GridView gridview;
         noiv1= (ImageView) findViewById(R.id.no_imageview1);
         noiv2= (ImageView) findViewById(R.id.no_imageview2);
         gridview= (GridView) findViewById(R.id.zhu_gridview);
-        expandableListView = (PinnedHeaderExpandableListView) findViewById(R.id.expandablelist);
-        stickyLayout = (StickyLayout)findViewById(R.id.sticky_layout);
+
         //先进行网络下载，获取信息
         getData();
-        adapter = new MyexpandableListAdapter(this);
-       expandableListView.setAdapter(adapter);
-        expandableListView.setOnChildClickListener(this);
-        expandableListView.setOnGroupClickListener(this);
-        stickyLayout.setOnGiveUpTouchEventListener(this);
+
+
 
         //给gridview设置数据...默认
         ArrayAdapter<String>adapter3=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,cai);
@@ -154,140 +148,6 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
     }
 
 
-
-
-
-    @Override
-    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-
-
-        return false;
-    }
-
-    @Override
-    public boolean giveUpTouchEvent(MotionEvent event) {
-        if (expandableListView.getFirstVisiblePosition() == 0) {
-            View view = expandableListView.getChildAt(0);
-            if (view != null && view.getTop() >= 0) {
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-
-
-    @Override
-    public View getPinnedHeader() {
-        View headerView = (ViewGroup) getLayoutInflater().inflate(R.layout.group, null);
-        headerView.setLayoutParams(new LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-
-        return headerView;
-    }
-
-    @Override
-   public void updatePinnedHeader(View headerView, int firstVisibleGroupPos) {
-        Group firstVisibleGroup = (Group) adapter.getGroup(firstVisibleGroupPos);
-
-
-    }
-
-
-    @Override
-    public boolean onGroupClick(final ExpandableListView parent, final View v,
-                                int groupPosition, final long id) {
-
-        return false;
-    }
-
-    class  MyexpandableListAdapter extends BaseExpandableListAdapter
-   {
-       private Context context;
-       private LayoutInflater inflater;
-       public MyexpandableListAdapter(MainActivity context) {
-           this.context = context;
-           inflater = LayoutInflater.from(context);
-       }
-
-       @Override
-       public int getGroupCount() {
-           return 1;
-       }
-
-       @Override
-       public int getChildrenCount(int groupPosition) {
-           return 0;
-       }
-
-
-       @Override
-       public Object getGroup(int groupPosition) {
-           return null;
-       }
-
-       @Override
-       public Object getChild(int groupPosition, int childPosition) {
-           return null;
-       }
-
-
-       @Override
-       public long getGroupId(int groupPosition) {
-           return groupPosition;
-
-       }
-
-       @Override
-       public long getChildId(int groupPosition, int childPosition) {
-           return childPosition;
-       }
-
-       @Override
-       public boolean hasStableIds() {
-           return true;
-       }
-
-
-       @Override
-       public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-
-
-               convertView = inflater.inflate(R.layout.group, null);
-
-
-               return convertView;
-
-       }
-
-       @Override
-       public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-
-
-               convertView = inflater.inflate(R.layout.child, null);
-
-
-               Button button = (Button) convertView
-                       .findViewById(R.id.button1);
-               button.setOnClickListener(new Button.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       Toast.makeText(MainActivity.this, "clicked pos=", Toast.LENGTH_SHORT).show();
-                   }
-               });
-
-
-
-
-           return convertView;
-       }
-
-       @Override
-       public boolean isChildSelectable(int groupPosition, int childPosition) {
-           return true;
-       }
-   }
 
 //定义一方法用来下载数据
     public void getData()

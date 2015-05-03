@@ -2,62 +2,66 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity">
-    <cn.qust.utils.StickyLayout
-        android:id="@+id/sticky_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:id="@+id/sticky_header"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="center"
-
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/z_home_topbar_bg_name" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/sticky_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-
-
-
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical"
                     >
 
-
-                    <cn.qust.utils.PinnedHeaderExpandableListView
-                        android:id="@+id/expandablelist"
+                    <LinearLayout
+                        android:id="@+id/sticky_header"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:cacheColorHint="@null"
-                        android:childDivider="@drawable/child"
-                        android:childIndicatorLeft="0dp"
-                        android:divider="@color/Grey"
-                        android:dividerHeight="1dp"
-                        android:groupIndicator="@null"
-                        android:scrollbarAlwaysDrawHorizontalTrack="false" >
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/z_home_topbar_bg_name" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            android:background="@drawable/umeng_socialize_input_bar"
+                            >
+
+                            <Button
+                                android:id="@+id/zhu_button2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="菜名/食材/美食帖/哈友等"
+                                android:drawableLeft="@drawable/i_icon_search"
+                                android:textColor="#000"
+                                android:background="@null"
+                                android:layout_marginRight="50dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginLeft="50dp"
+                                android:textSize="15dp"
+
+                                />
+
+                        </LinearLayout>
 
 
-                    </cn.qust.utils.PinnedHeaderExpandableListView>
-                    <RelativeLayout
+
+                        </LinearLayout>
+
+
+
+                <RelativeLayout
                         android:id="@+id/lin"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
@@ -137,7 +141,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:onClick="btnonClick"
-                            android:drawableLeft="@drawable/z_home_menu_ico_index_active"
+                            android:drawableLeft="@drawable/z_reg_login_logo_xiangha"
                             android:text="菜谱分类"
                             android:background="@null"
                             android:textColor="#ff0000"
@@ -209,7 +213,7 @@
                         </RadioGroup>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1000dp"
+                        android:layout_height="500dp"
                         android:orientation="vertical"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
@@ -219,7 +223,7 @@
                             android:id="@+id/rr"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="4"
+                            android:layout_weight="3"
                             android:orientation="vertical"
                             android:padding="10dp"
                             >
@@ -233,11 +237,12 @@
                                  android:id="@+id/no_textview"
                                  android:layout_width="match_parent"
                                  android:layout_height="40dp"
-                                 android:background="#0f0f00"
+                                 android:background="#BEBEBE"
                                  android:text="aaaaaaaaa"
                                  android:textSize="17sp"
                                  android:textStyle="bold"
                                  android:textColor="#fff"
+                                 android:layout_alignBottom="@id/no_imageview"
                                  />
 
 
@@ -253,13 +258,16 @@
                                 android:id="@+id/no_textview1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="10dp"
                                 />
                             <ImageView
                                 android:id="@+id/no_imageview1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="3"
                                 android:scaleType="fitXY"
                                 />
 
@@ -276,13 +284,17 @@
                                 android:id="@+id/no_textview2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="10dp"
                                 />
                             <ImageView
                                 android:id="@+id/no_imageview2"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="3"
+
                                 android:scaleType="fitXY"
                                 />
 
@@ -292,15 +304,18 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:ellipsize="none"
+    android:gravity="center"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:layout_marginTop="20dp"
-    android:text="-----------活跃美食家------------"
+    android:text="----------------------活跃美食家-----------------------"
     />
                     <android.support.v4.view.ViewPager
                         android:id="@+id/zhu_viewpager1_3"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="100dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="10dp"
@@ -308,7 +323,7 @@
 <Button
     android:id="@+id/di_button"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="100dp"
     android:gravity="center|center_horizontal"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
@@ -317,15 +332,17 @@
 
     />
 
-
+<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="200dp" />
                 </LinearLayout>
 
             </ScrollView>
 
-        </LinearLayout>
 
 
-    </cn.qust.utils.StickyLayout>
+
+
 
 
 

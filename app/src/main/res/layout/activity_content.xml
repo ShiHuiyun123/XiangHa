@@ -34,15 +34,15 @@
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-       android:background="@drawable/umeng_socialize_nav_bar_bg"
+        android:layout_height="70dp"
+       android:background="@drawable/umeng_socialize_slate_bg"
         android:layout_alignParentBottom="true"
         >
 
         <RadioGroup
             android:id="@+id/main_tab_group"
             android:layout_width="fill_parent"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:background="#0f0f0f00"
              android:gravity="bottom"

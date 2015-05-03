@@ -1,6 +1,12 @@
 package adapter.cn.ss;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +17,9 @@ import android.widget.TextView;
 
 import com.example.administrator.xiangha.R;
 import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
+import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
+import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
 
 import java.util.HashMap;
 import java.util.List;
@@ -56,7 +65,27 @@ public class ViewAdapter03  extends BaseAdapter{
 
         //下载图片
         BitmapUtils bitmapUtils = new BitmapUtils(context, Environment.getExternalStorageDirectory().getAbsolutePath(), 1 / 8.0f, 1024 * 1024 * 1024);
-        bitmapUtils.display(holder.iv, map.get("img").toString());
+
+
+        bitmapUtils.display(holder.iv, map.get("img").toString(),new BitmapLoadCallBack<ImageView>() {
+            @Override
+            public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
+                Bitmap ret = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(ret); //画布
+                Paint paint = new Paint(); //画笔
+                paint.setAntiAlias(true);
+
+                BitmapShader shader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+                paint.setShader(shader);
+                canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2, bitmap.getWidth() / 2, paint);
+                imageView.setImageBitmap(ret);
+            }
+
+            @Override
+            public void onLoadFailed(ImageView imageView, String s, Drawable drawable) {
+
+            }
+        });
 
 
 
