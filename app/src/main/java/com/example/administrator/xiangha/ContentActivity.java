@@ -1,10 +1,14 @@
 package com.example.administrator.xiangha;
 
 import android.app.ActivityGroup;
+import android.app.AlertDialog;
 import android.app.TabActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,10 +18,15 @@ import android.widget.ImageView;
 
 import android.widget.RadioGroup;
 import android.widget.TabHost;
-import android.widget.TextView;
+
+
+import ss.simple.zi.BaseActivity;
+
+import ss.simple.zi.MyAppalication;
 
 
 public class ContentActivity extends TabActivity {
+
     private TabHost tabHost;
     private Intent intent;
     //用来跳转的activity
@@ -66,9 +75,7 @@ private String title[]={"菜谱","美食圈","null","消息","我"};//后面要�
     }
 
 
-
-
-//定义一个方法，实例化tab标签
+    //定义一个方法，实例化tab标签
 
 public void initTabView()
 {
@@ -106,5 +113,6 @@ public void initTabView()
 
 
 }
+
 
 }

@@ -1,6 +1,7 @@
 package com.example.administrator.xiangha;
 //菜谱页面
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -45,16 +46,16 @@ import java.util.List;
 import fra.ss.cns.AddPageFragment2;
 import fra.ss.cns.AddPageFragment3;
 import ss.simple.zi.AddPageAdapter;
+import ss.simple.zi.BaseActivity;
 
 
-
-
-public class MainActivity extends ActionBarActivity  {
+public class MainActivity extends ActionBarActivity {
 
     private ViewPager viewpage1,viewpage2,viewpage3;
     private RadioGroup radiopage1,radiopage2;
     private TextView tv1,notv,notv1,notv2;
-    private Button caipu,jiangkang;
+    //菜谱分类按钮，健康养生按钮，点击搜索按钮
+    private Button caipu,jiangkang,sos;
     private ImageView noiv,noiv1,noiv2;
     //用来存放各个模块的数据
     private List<String>cai=new ArrayList<>();
@@ -79,33 +80,21 @@ private GridView gridview;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         caipu= (Button) findViewById(R.id.zhu_caipu);
-        jiangkang= (Button) findViewById(R.id.zhu_yangsheng);
-        viewpage1= (ViewPager) findViewById(R.id.zhu_viewpager1);
-        radiopage1= (RadioGroup) findViewById(R.id.zhu_rg);
-        viewpage2= (ViewPager) findViewById(R.id.zhu_viewpager1_2);
-        radiopage2= (RadioGroup) findViewById(R.id.zhu_rg_2);
-        viewpage3= (ViewPager) findViewById(R.id.zhu_viewpager1_3);
-          tv1= (TextView) findViewById(R.id.zhu_textview1);
-        requestQueue =Volley.newRequestQueue(MainActivity.this);
-        notv = (TextView) findViewById(R.id.no_textview);
-        notv1 = (TextView) findViewById(R.id.no_textview1);
-        notv2 = (TextView) findViewById(R.id.no_textview2);
-        noiv= (ImageView) findViewById(R.id.no_imageview);
-        noiv1= (ImageView) findViewById(R.id.no_imageview1);
-        noiv2= (ImageView) findViewById(R.id.no_imageview2);
-        gridview= (GridView) findViewById(R.id.zhu_gridview);
+         //初始化控件
+        init();
 
         //先进行网络下载，获取信息
         getData();
 
 
 
+
+
         //给gridview设置数据...默认
         ArrayAdapter<String>adapter3=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,cai);
         gridview.setAdapter(adapter3);
-//给viewpage1设置适配器
-viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
+   //给viewpage1设置适配器
+   viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
   //设置viewpage1的监听事件
         viewpage1.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -136,7 +125,7 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
             }
         });
         //给viewpage2设置数据
-          //  viewpage2.setAdapter(new AddpageAdapter2(getSupportFragmentManager()));
+            viewpage2.setAdapter(new AddpageAdapter2(getSupportFragmentManager()));
 
 
       // 给viewpage3设置数据
@@ -267,8 +256,7 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
                         map6=new HashMap<>();
                         map6.put("name",obj6.get("name"));
                         map6.put("type",obj6.get("type"));
-                        //?
-                        map6.put("imgs",obj6.get("imgs"));
+
                         map6.put("title",obj6.get("title"));
                         map6.put("url",obj6.get("url"));
                         map6.put("content",obj6.get("content"));
@@ -307,6 +295,13 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
                 ArrayAdapter<String>adapter2=new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,jian);
                 gridview.setAdapter(adapter2);
                 break;
+            case R.id.zhu_button2://点击sos按钮时，跳转页面
+                Intent intent=new Intent(MainActivity.this,AddContentActivity.class);
+                intent.putExtra("ss",0);
+                startActivity(intent);
+
+                break;
+
         }
     }
     //定义一个类
@@ -343,9 +338,30 @@ viewpage1.setAdapter(new AddPageAdapter(getSupportFragmentManager()));
         @Override
         public int getCount() {
 
-            return  list6.size();
+            return  3;
         }
     }
+//定义一个初始化的方法
+    public void  init()
+    {
+        caipu= (Button) findViewById(R.id.zhu_caipu);
+        jiangkang= (Button) findViewById(R.id.zhu_yangsheng);
+        viewpage1= (ViewPager) findViewById(R.id.zhu_viewpager1);
+        radiopage1= (RadioGroup) findViewById(R.id.zhu_rg);
+        viewpage2= (ViewPager) findViewById(R.id.zhu_viewpager1_2);
+        radiopage2= (RadioGroup) findViewById(R.id.zhu_rg_2);
+        viewpage3= (ViewPager) findViewById(R.id.zhu_viewpager1_3);
+        tv1= (TextView) findViewById(R.id.zhu_textview1);
+        requestQueue =Volley.newRequestQueue(MainActivity.this);
+        notv = (TextView) findViewById(R.id.no_textview);
+        notv1 = (TextView) findViewById(R.id.no_textview1);
+        notv2 = (TextView) findViewById(R.id.no_textview2);
+        noiv= (ImageView) findViewById(R.id.no_imageview);
+        noiv1= (ImageView) findViewById(R.id.no_imageview1);
+        noiv2= (ImageView) findViewById(R.id.no_imageview2);
+        gridview= (GridView) findViewById(R.id.zhu_gridview);
+        sos= (Button) findViewById(R.id.zhu_button2);
 
+    }
 
 }

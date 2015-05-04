@@ -11,5 +11,6 @@
     <string name="title_activity_hello">HelloActivity</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_welcom">WelcomActivity</string>
+    <string name="title_activity_add_content">AddContentActivity</string>
 
 </resources>
